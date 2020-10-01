@@ -1,0 +1,63 @@
+{
+  "name": "ts-service-starter",
+  "version": "1.0.0-alpha.0",
+  "description": "Typescript, Jest, Prettier, RabbitMQ, Redis, Postgres - ready to code",
+  "main": "index.js",
+  "scripts": {
+    "start": "run.env tsc && run.env node ./dist/src/index.js",
+    "test": "run.env jest",
+    "format": "prettier --write '**/*.{js,json,jsx}' '!dist' && prettier-tslint fix '**/*.{ts,tsx}' '!dist'"
+  },
+  "author": "Aaron Madsen <aaron@codifiant.com>",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^2.13.1",
+    "express": "^4.17.1",
+    "knex": "^0.21.1",
+    "redis": "^3.0.2",
+    "run.env": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "@types/redis": "^2.8.27",
+    "jest": "^26.4.2",
+    "prettier": "^1.19.1",
+    "prettier-tslint": "^0.4.2",
+    "ts-jest": "^26.4.1",
+    "ts-node": "^8.10.1",
+    "tslint": "^6.1.2",
+    "typescript": "^4.0.3"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "arrowParens": "always"
+  },
+  "jest": {
+    "roots": [
+      "."
+    ],
+    "testPathIgnorePatterns": [
+      "node_modules",
+      "dist"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "verbose": true,
+    "globalSetup": "./test/support/test-setup.js",
+    "globalTeardown": "./test/support/test-teardown.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/amadsen/ts-service-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amadsen/ts-service-starter/issues"
+  },
+  "homepage": "https://github.com/amadsen/ts-service-starter#readme"
+}
